@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body { margin: 0; }
+  video { width: 100vw; height: 100vh; display: block; object-fit: cover; }
+</style>
+</head>
+<body>
+<video id="vid" autoplay playsinline controls>
+  <source id="src" type="video/mp4">
+</video>
+<script>
+  const params = new URLSearchParams(location.search);
+  const videoUrl = params.get('v');
+  if (videoUrl) {
+    document.getElementById('src').src = decodeURIComponent(videoUrl);
+  }
+</script>
+</body>
+</html>
